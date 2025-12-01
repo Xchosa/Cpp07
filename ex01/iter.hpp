@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 16:27:03 by poverbec          #+#    #+#             */
-/*   Updated: 2025/11/30 20:48:45 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/12/01 09:48:36 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,13 @@ template <typename T> void swap(T &x, T &y)
 	x = y;
 	y = tmp;
 }
-template <typename T> void iter(T &x, T &y , T &z)
+template <typename T> void iter(T *array, int length , void (*function) (T&))
 {
-	
+	for(int i = 0; i < length; i++)
+	{
+		function(array[i]);
+		
+	}
 }
 /*
 The first parameter is the address of an array.•
