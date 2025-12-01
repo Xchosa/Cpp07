@@ -6,11 +6,12 @@
 /*   By: poverbec <poverbec@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 16:26:46 by poverbec          #+#    #+#             */
-/*   Updated: 2025/12/01 09:55:41 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/12/01 11:37:11 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "iter.hpp"
+#include <string>
 
 template <typename T> void testfunction(T &array_value)
 {
@@ -25,7 +26,7 @@ template <typename T> void printfk(T &array)
 int main()
 {
     double testarray[] = {1,2,3,4,5,6,7,8,9,10};
-    int stringarray[][3] = {"hello", "world", "shine"};
+    std::string stringarray[] = {"hello", "world", "shine"};
 
     std::cout << "print array before iter" << std::endl;
     for(int i = 0; i < 10; i ++)
@@ -42,6 +43,13 @@ int main()
     }
     iter(testarray, 10, printfk<double>);
     std::cout << std::endl;
+
+    std::cout << "print string iter" << std::endl;
+    int StringArrayLength = sizeof(stringarray) / sizeof(stringarray[0]);
+    
+    std::cout << StringArrayLength<< std::endl;
+    iter(stringarray, StringArrayLength, printfk<std::string>);
+    
 	return 0;
 }
 

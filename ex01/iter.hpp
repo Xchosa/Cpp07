@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 16:27:03 by poverbec          #+#    #+#             */
-/*   Updated: 2025/12/01 09:48:36 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/12/01 11:42:48 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,23 @@ template <typename T> void swap(T &x, T &y)
 	x = y;
 	y = tmp;
 }
-template <typename T> void iter(T *array, int length , void (*function) (T&))
+//template <typename T> void iter(T *array, int length , void (*function) (T&))
+//{
+//	for(int i = 0; i < length; i++)
+//	{
+//		function(array[i]);
+		
+//	}
+//}
+
+// generic function Pointer 
+template <typename T, typename FuncType>
+void iter( T *array, int length, FuncType function)
 {
+	
 	for(int i = 0; i < length; i++)
 	{
 		function(array[i]);
 		
 	}
 }
-/*
-The first parameter is the address of an array.•
-The second one is the length of the array, passed as aconstvalue.•
-The third one is a function that will be called on every element of the array.
-*/
