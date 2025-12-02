@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 16:27:03 by poverbec          #+#    #+#             */
-/*   Updated: 2025/12/01 16:20:24 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/12/02 10:30:31 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,21 @@
 
 #include <iostream>
 #include <exception>
+#include <string>
 
 template <typename T>
 class Array{
 	
 	private:
+	T* data;
 	unsigned int _n;
 
 	public:
-	Array(){};
-	~Array(){};
+	Array();
+	~Array();
 
 	Array& Array(const Array &object);
-	Array& operator=(const Array &object)
-	{
-		
-	}
+	Array& operator=(const Array &object);
 }
 //template <typename T> void iter(T *array, int length , void (*function) (T&))
 //{
