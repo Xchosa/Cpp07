@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 16:19:16 by poverbec          #+#    #+#             */
-/*   Updated: 2025/12/05 09:49:10 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/12/05 12:42:25 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Array<T>::Array(): _n(0), data(nullptr)
 template <typename T>
 Array<T>::Array(unsigned int size) : _n(size),  data(nullptr)
 {
-	data = new T[size];
+	data = new T[size]();
 }
 
 template <typename T>
@@ -54,7 +54,7 @@ Array<T>& Array<T>::operator=(const Array<T> &object)
 		this->_n = object._n;
 		if(object.data)
 		{
-			for(unsigned int i = 0; 0 < object._n; i++)
+			for(unsigned int i = 0; i < object._n; i++)
 			{
 				this->data[i] = object->data[i]; 
 			}

@@ -55,7 +55,7 @@
 //}
 
 
-
+#define MAX_VAL 750
 int main(int, char **)
 {
 	std::cout << "=== TEST 1: Default Constructor (empty array) ===" << std::endl;
@@ -64,9 +64,29 @@ int main(int, char **)
 
 
 	std::cout << "=== TEST 2: Constructor with size ===" << std::endl;
-	Array<float> floatArray(10);  
+	Array<float> floatArray(10); 
+	for(int i = 0; i < 10; i++)
+		{
+			floatArray.printValue(floatArray[i]);
+		}
+	std::cout << "===  Array with [] operator ===" << std::endl;
 	try{
-	    for(int i = 0; i < 12; i++)
+		for(int i = 0; i < 10; i++)
+		{
+			floatArray[i] = i * 1.25 + 1;
+			floatArray.printValue(floatArray[i]);
+		}
+	}
+		catch(const std::exception &e)
+	{
+		std::cerr << e.what() << std::endl; 
+	}
+	std::cout << "value of floatArray pos 4" << std::endl;
+	floatArray.printValue(floatArray[4]);
+	
+	std::cout << "===  Proof of changed FloatArray values ===" << std::endl;
+	try{
+	    for(int i = 0; i < 10; i++)
     	{
             std::cout << i <<". " << floatArray[i] << "| ";
         }
@@ -76,27 +96,37 @@ int main(int, char **)
 		std::cerr << e.what() << std::endl; 
 	}
 
-	std::cout << "=== Array with [] operator ===" << std::endl;
+    Array<int> numbers(MAX_VAL);
 	try{
 		for(int i = 0; i < 12; i++)
 		{
-			floatArray[i] = i * 1.25 + 1;
+			std::cout << i <<". " << numbers[i] << "| ";
 		}
 	}
-		catch(const std::exception &e)
-	{
+	catch(const std::exception &e){
 		std::cerr << e.what() << std::endl; 
 	}
+
+
+
+    int* mirror = new int[MAX_VAL];
+	for (int i = 0 ; i < MAX_VAL; i++)
+	{
+		mirror[i] = i + 0.5;
+	}
+	std::cout << std::endl;
+	std::cout << "=== Displaying mirror array ===" << std::endl;
+	std::cout << "number Size: " <<numbers.size() << std::endl;
+
 	
-	try{
-	    for(int i = 0; i < 12; i++)
-    	{
-            std::cout << i <<". " << floatArray[i] << "| ";
-        }
-    }
-	catch(const std::exception &e)
+	for (int i = 1; i <= 20; i++)
 	{
-		std::cerr << e.what() << std::endl; 
+		std::cout << mirror[i] << " ";
+		if (i % 10 == 0)
+			std::cout << std::endl;
 	}
-    //int * a = new int();then display*a
+	std::cout << std::endl;
+	delete [] mirror;
 }
+
+/// still leaks !!!!!!!!!!
