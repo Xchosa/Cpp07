@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 16:19:16 by poverbec          #+#    #+#             */
-/*   Updated: 2025/12/02 16:30:49 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/12/05 09:49:10 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Array<T>::Array(): _n(0), data(nullptr)
 
 // because of const members _n must bie initialized list
 template <typename T>
-Array<T>::Array(unsigned int size) : data(nullptr) , _n(size)
+Array<T>::Array(unsigned int size) : _n(size),  data(nullptr)
 {
 	data = new T[size];
 }
@@ -32,7 +32,7 @@ Array<T>::~Array()
 }
 
 template <typename T>
-Array<T>::Array(const Array<T> &object) :  data(nullptr), _n(object._n)
+Array<T>::Array(const Array<T> &object) : _n(object._n), data(nullptr)
 {
 	if(object.data)
 	{

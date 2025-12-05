@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 16:27:03 by poverbec          #+#    #+#             */
-/*   Updated: 2025/12/02 16:25:11 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/12/05 09:45:02 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ template <typename T>
 class Array{
 	
 	private:
-	T* data;
 	unsigned int _n;
+	T* data;
 
 	public:
 	Array();
