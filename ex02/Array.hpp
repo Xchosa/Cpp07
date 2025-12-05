@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 16:27:03 by poverbec          #+#    #+#             */
-/*   Updated: 2025/12/05 09:45:02 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/12/05 14:06:14 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,10 @@ class Array{
 	Array<T>& operator=(const Array<T> &object);
 
 	void printValue(T value);
+	void printValue(T value) const;
 	T& operator[] (unsigned int index);
-	unsigned int size();
+	const T& operator[](unsigned int index) const;
+	unsigned int size() const;
 };
 
 

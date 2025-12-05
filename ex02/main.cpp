@@ -81,6 +81,9 @@ int main(int, char **)
 	{
 		std::cerr << e.what() << std::endl; 
 	}
+
+	const Array<float> constfloatArray(10); 
+
 	std::cout << "value of floatArray pos 4" << std::endl;
 	floatArray.printValue(floatArray[4]);
 	

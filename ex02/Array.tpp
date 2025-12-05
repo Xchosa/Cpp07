@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 16:19:16 by poverbec          #+#    #+#             */
-/*   Updated: 2025/12/05 12:42:25 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/12/05 14:05:16 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ Array<T>& Array<T>::operator=(const Array<T> &object)
 
 
 template <typename T>
-unsigned int Array<T>::size()
+unsigned int Array<T>::size() const
 {
 	return this->_n;
 }
@@ -76,10 +76,24 @@ void Array<T>::printValue(T value) {
     std::cout << value << std::endl;
 }
 
+template <typename T>
+void Array<T>::printValue(T value) const 
+{
+    std::cout << value << std::endl;
+}
+
 
 
 template <typename T>
 T& Array<T>::operator[](unsigned int index)
+{
+	if(index >= _n)
+		throw std::out_of_range("Index out of bounds");
+	return data[index];
+}
+
+template <typename T>
+const T& Array<T>::operator[](unsigned int index) const 
 {
 	if(index >= _n)
 		throw std::out_of_range("Index out of bounds");
